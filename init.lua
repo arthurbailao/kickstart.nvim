@@ -245,6 +245,11 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
+-- Disable swap
+vim.opt.swapfile = false
+vim.opt.backup = false
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
@@ -254,7 +259,7 @@ vim.o.smartcase = true
 vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
+vim.o.updatetime = 200
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
