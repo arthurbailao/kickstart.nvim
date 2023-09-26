@@ -297,7 +297,7 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- File explorer
-vim.keymap.set("n", "<leader>nn", function() require("oil").toggle_float(".") end, { desc = "Oil Open" })
+vim.keymap.set("n", "<leader>nn", function() require("oil").toggle_float(nil) end, { desc = "Oil Open" })
 
 -- Move block up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -385,6 +385,8 @@ require('nvim-treesitter.configs').setup {
     'templ',
     'vimdoc',
     'vim',
+    'elixir',
+    'heex',
   },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
