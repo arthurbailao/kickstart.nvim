@@ -388,6 +388,7 @@ require('nvim-treesitter.configs').setup {
     'elixir',
     'heex',
     'hcl',
+    'rego',
   },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
