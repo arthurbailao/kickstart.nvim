@@ -75,8 +75,7 @@ require('lazy').setup({
 
     config = function()
       vim.keymap.set('n', '<leader>gs', ':Git<CR>', { desc = '[G]it [S]tatus' })
-    end
-
+    end,
   },
   'tpope/vim-rhubarb',
 
@@ -131,7 +130,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -234,7 +233,7 @@ require('lazy').setup({
       },
       sections = {
         lualine_c = {
-          { 'filename', path = 1 }
+          { 'filename', path = 1 },
         },
       },
     },
@@ -323,7 +322,7 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 
 -- Disable swap
 vim.opt.swapfile = false
@@ -360,19 +359,21 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- File explorer
-vim.keymap.set("n", "<leader>nn", function() require("oil").toggle_float(nil) end, { desc = "Oil Open" })
+vim.keymap.set('n', '<leader>nn', function()
+  require('oil').toggle_float(nil)
+end, { desc = 'Oil Open' })
 
 -- Move block up and down
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- Move window keeping cursor in the middle
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- Keep cursor in the middle
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -472,14 +473,14 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
 -- [[ Configure Treesitter ]]
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 parser_config.templ = {
   install_info = {
-    url = "https://github.com/vrischmann/tree-sitter-templ.git",
-    files = { "src/parser.c", "src/scanner.c" },
-    branch = "master",
+    url = 'https://github.com/vrischmann/tree-sitter-templ.git',
+    files = { 'src/parser.c', 'src/scanner.c' },
+    branch = 'master',
   },
-  filetype = "templ",
+  filetype = 'templ',
 }
 
 vim.treesitter.language.register('templ', 'templ')
