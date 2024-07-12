@@ -604,6 +604,18 @@ require('lazy').setup({
             },
           },
         },
+
+        helm_ls = {
+          settings = {
+            ['helm-ls'] = {
+              yamlls = {
+                path = 'yaml-language-server',
+              },
+            },
+          },
+        },
+
+        yamlls = {},
       }
 
       -- Ensure the servers and tools above are installed
