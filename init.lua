@@ -615,6 +615,8 @@ require('lazy').setup({
           },
         },
 
+        terraformls = {},
+
         yamlls = {},
       }
 
