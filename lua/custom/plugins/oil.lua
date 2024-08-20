@@ -6,6 +6,7 @@ return {
   config = function()
     require('oil').setup {
       columns = { 'icon' },
+      skip_confirm_for_simple_edits = true,
       keymaps = {
         ['<C-h>'] = false,
         ['<C-l>'] = false,
@@ -21,7 +22,7 @@ return {
         end,
         -- This function defines what will never be shown, even when `show_hidden` is set
         is_always_hidden = function(name, _)
-          return name == '.git' and vim.fn.isdirectory(name)
+          return name == '.git' and vim.fn.isdirectory(name) == 1
         end,
       },
     }
