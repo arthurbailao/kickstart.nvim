@@ -19,16 +19,19 @@ return {
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
 
-    vim.keymap.set('n', '<m-j>', function()
+    vim.keymap.set('n', '<m-c-j>', function()
       harpoon:list():select(1)
     end)
-    vim.keymap.set('n', '<m-k>', function()
+
+    vim.keymap.set('n', '<m-c-k>', function()
       harpoon:list():select(2)
     end)
-    vim.keymap.set('n', '<m-l>', function()
+
+    vim.keymap.set('n', '<m-c-l>', function()
       harpoon:list():select(3)
     end)
-    vim.keymap.set('n', '<m-;>', function()
+
+    vim.keymap.set('n', '<m-c-;>', function()
       harpoon:list():select(4)
     end)
 
