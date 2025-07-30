@@ -710,16 +710,6 @@ require('lazy').setup({
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         ts_ls = {},
-        --
-        --
-        lexical = {
-          filetypes = { 'elixir', 'eelixir', 'heex' },
-          settings = {},
-          cmd = { '/Users/arthurbailao/projects/lexical/_build/dev/package/lexical/bin/start_lexical.sh' },
-          root_dir = function(fname)
-            return require('lspconfig').util.root_pattern('mix.exs', '.git')(fname) or vim.loop.os_homedir()
-          end,
-        },
 
         lua_ls = {
           -- cmd = { ... },
@@ -752,6 +742,8 @@ require('lazy').setup({
         terraformls = {},
 
         yamlls = {},
+
+        tailwindcss = {},
       }
 
       -- Ensure the servers and tools above are installed
